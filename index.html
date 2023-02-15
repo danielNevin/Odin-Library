@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="#">
+  <title>Personal Library</title>
+</head>
+<body>
+  <div class="overall-container">
+    <div class="header">
+      <div class="header-container">
+        <div class="header-text">
+          <div class="header-logo"><img style="height: 4vh;" src="/SVGs/menu_book.svg" alt="Library Icon"></div>
+          YOUR LIBRARY</div>
+        <div class="header-log-in-container">
+          <button class="header-log-in">LOG IN</button>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="add-book-button-container">
+        <div class="book-container" id="add-book-button">
+          <div class="add-book-button-label">
+            <img style="height: 4vh;" src="/SVGs/add.svg" alt="Add Icon">
+          </div>
+          <span class="add-book-form">
+            <span class="form-elements">
+              <span class="form-label">TITLE</span>
+              <span class="form-field"><input type="text" id="book-title"></span>
+            </span>
+            <span class="form-elements">
+              <span class="form-label">AUTHOR</span>
+              <span class="form-field"><input type="text" id="book-author"></span>
+            </span>
+            <span class="form-elements">
+              <span class="form-label">PAGES</span>
+              <span class="form-field"><input type="text" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" id="book-pages"></span>
+            </span>
+            <span class="form-elements">
+              <span class="form-label">READ?</span>
+              <span class="form-field"><input type="checkbox" style="height: 1.5vh;" id="book-read"></span>
+            </span>
+            <button onclick="addBookToLibrary()" class="header-log-in" id="submit-button">SUBMIT</button>
+          </span>
+        </div>
+      </div>
+      <div class="content-container" id="div-landing-space">
+      </div>
+    </div>
+    <div class="footer">Copyright &copy; 2023 github.com/dnevin234</div>
+  </div>
+  <script src="Library.js" defer></script> 
+</body>
+</html>

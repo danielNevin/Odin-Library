@@ -1,0 +1,22 @@
+{
+  "name": "odin-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Library.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnevin234/Odin-Library.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dnevin234/Odin-Library/issues"
+  },
+  "homepage": "https://github.com/dnevin234/Odin-Library#readme",
+  "devDependencies": {
+    "eslint": "^8.34.0"
+  }
+}
