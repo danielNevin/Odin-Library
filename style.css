@@ -62,23 +62,17 @@ html, body {
 .header-log-in  {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   cursor: pointer;
-  border: 3px solid;
-  border-radius: 3px;
-  padding: 0.25em 0.5em;
-  box-shadow: 0px 1px 0px 0px, 0px 2px 0px 0px, 0px 3px 0px 0px;
+  border: 1px;
+  border-radius: 1vh;
+  padding: 0.5vh 1.5vh 0.5vh 1.5vh;
   position: relative;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(230, 230, 230);
 }
 
 .header-log-in:hover {
   -webkit-filter: brightness(70%);
-}
-
-.header-log-in:active   {
-  box-shadow: 0px 0px 0px 0px;
-  top: 3px;
 }
 
 .content {
@@ -176,7 +170,8 @@ html, body {
   justify-content: right;
   font-size: 1.3vh;
   align-items: center;
-  letter-spacing: .2rem;
+  letter-spacing: .15rem;
+  padding-left: 2vh;
 }
 
 .form-field {
@@ -191,7 +186,7 @@ input {
   padding-left: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 15px -6px inset, rgba(0, 0, 0, 0.3) 0px 6px 2px -6px inset;
   height: 2.5vh;
-  font-size: 1.2vh;
+  font-size: 1.5vh;
   width: 90%;
 }
 
@@ -199,8 +194,9 @@ input {
   width: auto;
   height: auto;
   display: grid;
-  grid-template-rows: 3fr 2fr;
-  padding: 2vh 3vh 2vh 3vh;
+  grid-template-rows: repeat(5, 1fr);
+  justify-content: center;
+  padding: 2vh;
   background-color: white;
   gap: 1vh;
   border: 0;
@@ -226,39 +222,15 @@ input {
 	animation: append-animate .5s;
 }
 
-.book-div {
-  display: grid;
-  height: auto;
-  width: auto;
-  grid-template-rows: repeat(3, 1fr);
-}
-
-.book-button-container {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  height: auto;
-  width: auto;
-  align-items: center;
-  justify-content: center;
-}
-
 .book-container-text {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 2vh;
-  text-align: center;
   font-size: 1.5vh;
   align-items: center;
-  text-align: left;
-  text-transform: uppercase;
-}
-
-.book-button-container-label {
-  text-align: right;
 }
 
 .book-button-container-text {
-  text-align: left;
+  text-align: center;
+  font-size: 1.8vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 .book-container-button {
@@ -276,7 +248,7 @@ input {
 
 #book-read-button {
   text-transform: uppercase;
-  width: 12vh;
+  width: auto;
 }
 
 .book-read-button-read {

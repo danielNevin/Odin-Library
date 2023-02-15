@@ -12,73 +12,34 @@ function Book(bookTitle, bookAuthor, bookPages, bookRead) {
 }
 
 function addBookCard() {
-    /* Generate book container */
-  let bookDivContainer = document.createElement("div");
-  bookDivContainer.classList.add("book-container", "new-book-container");
-  bookDivContainer.setAttribute("id", "book-" + n);
-
     /* Generate text container */
   let bookDiv = document.createElement("div");
-  bookDiv.classList.add("book-div");
+  bookDiv.classList.add("book-div", "book-container");
   bookDiv.setAttribute("id", "book-container-" + n);
-  bookDivContainer.appendChild(bookDiv);
 
-    /* Generate button container */
-  let bookDivButton = document.createElement("div");
-  bookDivButton.classList.add("book-button-container");
-  bookDivButton.setAttribute("id", "book-button-" + n);
-  bookDivContainer.appendChild(bookDivButton);
-
-    /* Generate bookTitle text div and append text from form */
-  let bookTitleDiv = document.createElement("div");
-  bookTitleDiv.className = "book-container-text";
-  bookTitleDiv.setAttribute("id", "book-title");
-
-  let bookTitleDivTitle = document.createElement("div");
-  bookTitleDivTitle.appendChild(document.createTextNode("Title:"));
-  bookTitleDivTitle.classList.add("book-button-container-label");
-  bookTitleDiv.appendChild(bookTitleDivTitle);
+  /* Generate bookTitle  div and append title from form */
 
   let bookTitleDivText = document.createElement("div");
-  bookTitleDivText.appendChild(document.createTextNode(myLibrary[n].title));
+  bookTitleDivText.appendChild(document.createTextNode('"' + myLibrary[n].title + '"'));
   bookTitleDivText.classList.add("book-button-container-text");
-  bookTitleDiv.appendChild(bookTitleDivText);
   
-  bookDiv.appendChild(bookTitleDiv);
+  bookDiv.appendChild(bookTitleDivText);
 
-    /* Generate bookAuthor text div and append text from form */
-  let bookAuthorDiv = document.createElement("div");
-  bookAuthorDiv.className = "book-container-text";
-  bookAuthorDiv.setAttribute("id", "book-author");
-
-  let bookAuthorDivAuthor = document.createElement("div");
-  bookAuthorDivAuthor.appendChild(document.createTextNode("Author:"));
-  bookAuthorDivAuthor.classList.add("book-button-container-label");
-  bookAuthorDiv.appendChild(bookAuthorDivAuthor);
+  /* Generate bookAuthor div and append author from form */
 
   let bookAuthorDivText = document.createElement("div");
   bookAuthorDivText.appendChild(document.createTextNode(myLibrary[n].author));
   bookAuthorDivText.classList.add("book-button-container-text");
-  bookAuthorDiv.appendChild(bookAuthorDivText);
 
-  bookDiv.appendChild(bookAuthorDiv);
+  bookDiv.appendChild(bookAuthorDivText);
 
     /* Generate bookPages number div and append number from form */
-  let bookPagesDiv = document.createElement("div");
-  bookPagesDiv.className = "book-container-text";
-  bookPagesDiv.setAttribute("id", "book-pages");
-
-  let bookPagesDivPages = document.createElement("div");
-  bookPagesDivPages.appendChild(document.createTextNode("Pages:"));
-  bookPagesDivPages.classList.add("book-button-container-label");
-  bookPagesDiv.appendChild(bookPagesDivPages);
 
   let bookPagesDivNumber = document.createElement("div");
-  bookPagesDivNumber.appendChild(document.createTextNode(myLibrary[n].pages));
+  bookPagesDivNumber.appendChild(document.createTextNode(myLibrary[n].pages + " pages"));
   bookPagesDivNumber.classList.add("book-button-container-text");
-  bookPagesDiv.appendChild(bookPagesDivNumber);
 
-  bookDiv.appendChild(bookPagesDiv);
+  bookDiv.appendChild(bookPagesDivNumber);
 
     /* Generate bookRead button and add read status based on checkbox state */
   let bookReadButton = document.createElement("button");
@@ -110,7 +71,7 @@ function addBookCard() {
     bookReadButton.classList.add("book-read-button-notread");
   }
 
-  bookDivButton.appendChild(bookReadButton);
+  bookDiv.appendChild(bookReadButton);
 
     /* Generate bookRemove button and allow the user to remove the bookDiv onclick */
   let bookRemoveButton = document.createElement("button");
@@ -119,17 +80,17 @@ function addBookCard() {
 
       /* Allow bookRemove button to remove div from page */
   bookRemoveButton.onclick = function removeDiv () {
-    this.parentNode.parentNode.style.scale = '0';
-    setTimeout(() => this.parentNode.parentNode.remove(), 500);
+    this.parentNode.style.scale = '0';
+    setTimeout(() => this.parentNode.remove(), 500);
   };
   bookRemoveButton.appendChild(document.createTextNode("Remove"));
-  bookDivButton.appendChild(bookRemoveButton);
+  bookDiv.appendChild(bookRemoveButton);
 
       /* Increment index */
   n += 1;
 
       /* Add complete div to page */
-  document.getElementById('div-landing-space').appendChild(bookDivContainer);
+  document.getElementById('div-landing-space').appendChild(bookDiv);
 }
 
 function addBookToLibrary() {
