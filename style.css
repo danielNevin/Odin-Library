@@ -200,7 +200,7 @@ input {
   height: auto;
   display: grid;
   grid-template-rows: 3fr 2fr;
-  padding: 2vh;
+  padding: 2vh 3vh 2vh 3vh;
   background-color: white;
   gap: 1vh;
   border: 0;
@@ -245,9 +245,19 @@ input {
 .book-container-text {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  gap: 2vh;
   text-align: center;
   font-size: 1.5vh;
   align-items: center;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.book-button-container-label {
+  text-align: right;
+}
+
+.book-button-container-text {
   text-align: left;
 }
 

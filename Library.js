@@ -36,10 +36,12 @@ function addBookCard() {
 
   let bookTitleDivTitle = document.createElement("div");
   bookTitleDivTitle.appendChild(document.createTextNode("Title:"));
+  bookTitleDivTitle.classList.add("book-button-container-label");
   bookTitleDiv.appendChild(bookTitleDivTitle);
 
   let bookTitleDivText = document.createElement("div");
   bookTitleDivText.appendChild(document.createTextNode(myLibrary[n].title));
+  bookTitleDivText.classList.add("book-button-container-text");
   bookTitleDiv.appendChild(bookTitleDivText);
   
   bookDiv.appendChild(bookTitleDiv);
@@ -51,10 +53,12 @@ function addBookCard() {
 
   let bookAuthorDivAuthor = document.createElement("div");
   bookAuthorDivAuthor.appendChild(document.createTextNode("Author:"));
+  bookAuthorDivAuthor.classList.add("book-button-container-label");
   bookAuthorDiv.appendChild(bookAuthorDivAuthor);
 
   let bookAuthorDivText = document.createElement("div");
   bookAuthorDivText.appendChild(document.createTextNode(myLibrary[n].author));
+  bookAuthorDivText.classList.add("book-button-container-text");
   bookAuthorDiv.appendChild(bookAuthorDivText);
 
   bookDiv.appendChild(bookAuthorDiv);
@@ -66,10 +70,12 @@ function addBookCard() {
 
   let bookPagesDivPages = document.createElement("div");
   bookPagesDivPages.appendChild(document.createTextNode("Pages:"));
+  bookPagesDivPages.classList.add("book-button-container-label");
   bookPagesDiv.appendChild(bookPagesDivPages);
 
   let bookPagesDivNumber = document.createElement("div");
   bookPagesDivNumber.appendChild(document.createTextNode(myLibrary[n].pages));
+  bookPagesDivNumber.classList.add("book-button-container-text");
   bookPagesDiv.appendChild(bookPagesDivNumber);
 
   bookDiv.appendChild(bookPagesDiv);
