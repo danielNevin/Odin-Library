@@ -4,11 +4,13 @@ let n = 0;
 
 let myLibrary = [];
 
-function Book(bookTitle, bookAuthor, bookPages, bookRead) {
-  this.title = bookTitle;
-  this.author = bookAuthor;
-  this.pages = bookPages;
-  this.read = bookRead;
+class Book {
+  constructor(bookTitle, bookAuthor, bookPages, bookRead) {
+    this.title = bookTitle;
+    this.author = bookAuthor;
+    this.pages = bookPages;
+    this.read = bookRead;
+  }
 }
 
 function addBookCard() {
@@ -33,7 +35,7 @@ function addBookCard() {
 
   bookDiv.appendChild(bookAuthorDivText);
 
-    /* Generate bookPages number div and append number from form */
+  /* Generate bookPages number div and append number from form */
 
   let bookPagesDivNumber = document.createElement("div");
   bookPagesDivNumber.appendChild(document.createTextNode(myLibrary[n].pages + " pages"));
@@ -41,12 +43,13 @@ function addBookCard() {
 
   bookDiv.appendChild(bookPagesDivNumber);
 
-    /* Generate bookRead button and add read status based on checkbox state */
+  /* Generate bookRead button and add read status based on checkbox state */
+
   let bookReadButton = document.createElement("button");
   bookReadButton.className = "header-log-in";
   bookReadButton.setAttribute("id", "book-read-button");
 
-      /* Allow user to toggle "read" status of book */
+    /* Allow user to toggle "read" status of book */
   bookReadButton.onclick = function toggleRead () {
     if (bookReadButton.innerHTML === "Read") {
       bookReadButton.innerHTML = "Not Read";
@@ -59,7 +62,7 @@ function addBookCard() {
       bookReadButton.classList.add("book-read-button-read");
     }
   };
-      /* Adds the "read" text and appropriate class to the bookRead button */
+    /* Adds the "read" text and appropriate class to the bookRead button */
   let checkbox = document.getElementById("book-read");
   if (checkbox.checked === true) {
     bookReadButton.appendChild(document.createTextNode("Read"));
@@ -73,12 +76,12 @@ function addBookCard() {
 
   bookDiv.appendChild(bookReadButton);
 
-    /* Generate bookRemove button and allow the user to remove the bookDiv onclick */
+  /* Generate bookRemove button and allow the user to remove the bookDiv onclick */
   let bookRemoveButton = document.createElement("button");
   bookRemoveButton.className = "header-log-in";
   bookRemoveButton.setAttribute("id", "book-remove-button");
 
-      /* Allow bookRemove button to remove div from page */
+    /* Allow bookRemove button to remove div from page */
   bookRemoveButton.onclick = function removeDiv () {
     this.parentNode.style.scale = '0';
     setTimeout(() => this.parentNode.remove(), 500);
@@ -86,10 +89,10 @@ function addBookCard() {
   bookRemoveButton.appendChild(document.createTextNode("Remove"));
   bookDiv.appendChild(bookRemoveButton);
 
-      /* Increment index */
+  /* Increment index */
   n += 1;
 
-      /* Add complete div to page */
+  /* Add complete div to page */
   document.getElementById('div-landing-space').appendChild(bookDiv);
 }
 
